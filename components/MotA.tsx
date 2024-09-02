@@ -8,10 +8,14 @@ import {
 } from "react-native";
 
 import { NavigationProp } from "@react-navigation/native";
+import { LinearGradient } from "expo-linear-gradient";
 
-const FirstScreen = ({ navigation }: { navigation: NavigationProp<any> }) => {
+const MOtA = ({ navigation }: { navigation: NavigationProp<any> }) => {
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={["#C7F4F6", "#D1F4F6", "#E5F4F5", "#00CCF9"]}
+      style={styles.container}
+    >
       <View style={styles.circle}></View>
       <Text style={styles.title}>GROW</Text>
       <Text style={styles.title}>YOUR BUSINESS</Text>
@@ -40,19 +44,23 @@ const FirstScreen = ({ navigation }: { navigation: NavigationProp<any> }) => {
       <Pressable
         style={styles.button}
         onPress={() => {
-          navigation.navigate("MotA");
+          navigation.navigate("FirstScreen");
         }}
       >
         <Text style={styles.buttonText}>switch</Text>
       </Pressable>
-    </View>
+      <Text style={{ color: "black", fontSize: 20, fontWeight: "bold" }}>
+        How we work?
+      </Text>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2196F3", // Màu xanh dương từ hình ảnh
+    // backgroundColor: `linear-gradient(180deg, #C7F4F6 100% , #D1F4F6 100%, #E5F4F5 100%, #00CCF9 100%)`,
+
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
@@ -67,12 +75,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "white",
+    // color: "b",
     marginBottom: 10,
   },
   subtitle: {
     fontSize: 16,
-    color: "white",
+    // color: "white",
     textAlign: "center",
     marginBottom: 30,
   },
@@ -91,6 +99,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+  linearGradient: {
+    width: 200,
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+  },
 });
-
-export default FirstScreen;
+export default MOtA;
