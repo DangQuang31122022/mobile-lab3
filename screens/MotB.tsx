@@ -51,7 +51,7 @@ export default function MotB() {
         <TouchableOpacity
           style={[GlobalStyles.button, { width: "100%" }]}
           onPress={() => {
-            navigation.navigate("Login2a");
+            navigation.navigate("MotC");
           }}
         >
           <Text style={GlobalStyles.buttonText}>NEXT</Text>

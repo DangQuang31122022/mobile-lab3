@@ -11,12 +11,14 @@ import MotB from "./screens/MotB";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { PaperProvider } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import MotC from "./screens/MotC";
 
 const RootStack = createNativeStackNavigator({
   screens: {
     FirstScreen: FirstScreen,
     MotA: MOtA,
     MotB: MotB,
+    MotC: MotC,
     Login2a: Login2a,
   },
 });
