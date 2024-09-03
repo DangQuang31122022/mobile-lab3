@@ -12,6 +12,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { PaperProvider } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import MotC from "./screens/MotC";
+import MotD from "./screens/MotD";
+import MotE from "./screens/MotE";
+import XMEeye from "./screens/XMEeye";
 
 const RootStack = createNativeStackNavigator({
   screens: {
@@ -19,7 +22,10 @@ const RootStack = createNativeStackNavigator({
     MotA: MOtA,
     MotB: MotB,
     MotC: MotC,
+    MotD: MotD,
+    MotE: MotE,
     Login2a: Login2a,
+    XMEeye: XMEeye,
   },
 });
 
