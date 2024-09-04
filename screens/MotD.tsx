@@ -46,51 +46,54 @@ export default function MotD() {
               width: "100%",
             }}
           >
-            {/* <TextInput
-              onChangeText={handleChange("email")}
-              onBlur={handleBlur("email")}
-              value={values.email}
-            /> */}
-            <TextInput
-              mode="outlined"
-              onChangeText={handleChange("email")}
-              onBlur={handleBlur("email")}
-              value={values.email}
-              style={{
-                backgroundColor: "#C4C4C44D",
-                width: "100%",
-              }}
-              contentStyle={{ color: "black" }}
-              placeholder="Email"
-              placeholderTextColor={"black"}
-              outlineColor="black"
-              activeOutlineColor="black"
-            />
-            {touched.email && errors.email && (
-              <HelperText type="error" visible={true} style={{ color: "red" }}>
-                {errors.email}
-              </HelperText>
-            )}
-            <TextInput
-              mode="outlined"
-              onChangeText={handleChange("password")}
-              onBlur={handleBlur("password")}
-              value={values.password}
-              style={{ backgroundColor: "#C4C4C44D", width: "100%" }}
-              contentStyle={{ color: "black" }}
-              placeholder="Password"
-              placeholderTextColor={"black"}
-              secureTextEntry={!isVisible}
-              outlineColor="black"
-              activeOutlineColor="black"
-              right={
-                <TextInput.Icon
-                  icon={isVisible ? "eye-off" : "eye"}
-                  color={"black"}
-                  onPress={() => setIsVisible(!isVisible)}
-                />
-              }
-            />
+            <View style={{ width: "100%" }}>
+              <TextInput
+                mode="outlined"
+                onChangeText={handleChange("email")}
+                onBlur={handleBlur("email")}
+                value={values.email}
+                style={{
+                  backgroundColor: "#C4C4C44D",
+                  width: "100%",
+                }}
+                contentStyle={{ color: "black" }}
+                placeholder="Email"
+                placeholderTextColor={"black"}
+                outlineColor="black"
+                activeOutlineColor="black"
+              />
+              {touched.email && errors.email && (
+                <HelperText
+                  type="error"
+                  visible={true}
+                  style={{ color: "red" }}
+                >
+                  {errors.email}
+                </HelperText>
+              )}
+            </View>
+            <View style={{ width: "100%" }}>
+              <TextInput
+                mode="outlined"
+                onChangeText={handleChange("password")}
+                onBlur={handleBlur("password")}
+                value={values.password}
+                style={{ backgroundColor: "#C4C4C44D", width: "100%" }}
+                contentStyle={{ color: "black" }}
+                placeholder="Password"
+                placeholderTextColor={"black"}
+                secureTextEntry={!isVisible}
+                outlineColor="black"
+                activeOutlineColor="black"
+                right={
+                  <TextInput.Icon
+                    icon={isVisible ? "eye-off" : "eye"}
+                    color={"black"}
+                    onPress={() => setIsVisible(!isVisible)}
+                  />
+                }
+              />
+            </View>
             {touched.password && errors.password && (
               <HelperText type="error" visible={true} style={{ color: "red" }}>
                 {errors.password}
@@ -106,7 +109,12 @@ export default function MotD() {
                 navigation.navigate("MotE");
               }}
             >
-              <Text style={[GlobalStyles.buttonText, { color: "white" }]}>
+              <Text
+                style={[GlobalStyles.buttonText, { color: "white" }]}
+                onPress={() => {
+                  navigation.navigate("MotE");
+                }}
+              >
                 LOGIN
               </Text>
             </TouchableOpacity>
@@ -122,7 +130,14 @@ export default function MotD() {
         }}
       >
         <Text>When you agree to terms and conditions</Text>
-        <Text style={{ color: "#5D25FA" }}>For got your password?</Text>
+        <Text
+          style={{ color: "#5D25FA" }}
+          onPress={() => {
+            navigation.navigate("MotB");
+          }}
+        >
+          For got your password?
+        </Text>
         <Text>Or login with</Text>
       </View>
       <View

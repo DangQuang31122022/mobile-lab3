@@ -14,7 +14,6 @@ import {
   ParamListBase,
 } from "@react-navigation/native";
 import GlobalStyles from "../GlobalStyle";
-import Login2a from "./Login2a";
 
 const FirstScreen = () => {
   const navigation: NavigationProp<ParamListBase> = useNavigation();
@@ -36,12 +35,17 @@ const FirstScreen = () => {
         <TouchableOpacity
           style={GlobalStyles.button}
           onPress={() => {
-            navigation.navigate("Login2a");
+            navigation.navigate("MotD");
           }}
         >
           <Text style={GlobalStyles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={GlobalStyles.button}>
+        <TouchableOpacity
+          style={GlobalStyles.button}
+          onPress={() => {
+            navigation.navigate("MotE");
+          }}
+        >
           <Text style={GlobalStyles.buttonText}>SIGN UP</Text>
         </TouchableOpacity>
       </View>
